@@ -31,6 +31,29 @@
 
         <button type="submit">Submit</button>
     </form>
+    <?php
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars(trim($_POST['name']));
+        $food = htmlspecialchars(trim($_POST['food']));
+
+        $hour = date('H');
+        if ($hour >= 2 && $hour < 11) {
+            $greeting = "Good Morning";
+        } elseif ($hour >= 11 && $hour < 16) {
+            $greeting = "Good Afternoon";
+        } elseif ($hour >= 16 && $hour < 21) {
+            $greeting = "Good Evening";
+        } else {
+            $greeting = "Good Night";
+        }
+
+        echo "<div class='greeting'><h2>$greeting, $name! Your favorite food is $food.</h2></div>";
+    }
+
+    
+    ?>
 </body>
 
 </html>
