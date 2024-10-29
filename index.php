@@ -121,6 +121,8 @@
     </form>
     <?php
     $ip = $_SERVER['REMOTE_ADDR'];
+    $timezone = getTimezoneFromIP($ip);
+    date_default_timezone_set($timezone);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = htmlspecialchars(trim($_POST['name']));
@@ -138,6 +140,16 @@
         }
 
         echo "<div class='greeting'><h2>$greeting, $name! Your favorite food is $food.</h2></div>";
+    }
+
+    function getTimezoneFromIP($ip)
+    {
+        $json = @file_get_contents("http://ipinfo.io/{$ip}/json");
+        if ($json === false) {
+            return 'Asia/Kolkata'; // Default timezone if API call fails
+        }
+        $details = json_decode($json);
+        return $details->timezone ?? 'Asia/Kolkata'; // Default timezone if not found
     }
 
 
