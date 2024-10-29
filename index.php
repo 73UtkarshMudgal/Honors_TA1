@@ -6,6 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greet & Eat</title>
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        color: #bb86fc;
+    }
+
+    form {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        text-align: left;
+    }
+
+    label {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        color: #e0e0e0;
+    }
+
+    .highlight {
+        font-weight: bold;
+    }
+
+    .name-label {
+        color: #ffcc00;
+    }
+
+    .food-label {
+        color: #ff5733;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    input[type="text"] {
+        border-radius: 4px;
+        padding: 10px;
+        background-color: #303030;
+        color: #e0e0e0;
+        border: 1px solid #444;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .radio-group {
+        margin-bottom: 15px;
+    }
+
+    button {
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #3700b3;
+    }
+
+    .greeting {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #1e1e1e;
+        border-radius: 5px;
+        border: 1px solid #bb86fc;
+        width: 300px;
+        text-align: center;
+    }
+</style>
 
 <body>
     <h1>Welcome to the Greet & Eat!</h1>
@@ -52,7 +140,7 @@
         echo "<div class='greeting'><h2>$greeting, $name! Your favorite food is $food.</h2></div>";
     }
 
-    
+
     ?>
 </body>
 
